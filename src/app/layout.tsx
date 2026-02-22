@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/providers/theme-provider';
@@ -7,11 +7,18 @@ import { FirebaseProvider } from '@/components/providers/firebase-provider';
 import { Suspense } from 'react';
 import GoogleAnalyticsWrapper from '@/components/analytics/GoogleAnalyticsWrapper';
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-space',
+  weight: ['500', '700'],
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jakarta',
+  weight: ['300', '400'],
 });
 
 export const metadata: Metadata = {
@@ -29,10 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >

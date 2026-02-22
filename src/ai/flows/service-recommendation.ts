@@ -1,4 +1,4 @@
-'use server';
+// temporarily removed use server for static export
 
 /**
  * @fileOverview An AI-powered service recommendation tool.
@@ -8,8 +8,8 @@
  * - ServiceRecommendationOutput - The return type for the recommendService function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'genkit';
 
 const ServiceRecommendationInputSchema = z.object({
   businessNeeds: z
@@ -29,8 +29,8 @@ export type ServiceRecommendationOutput = z.infer<typeof ServiceRecommendationOu
 
 const prompt = ai.definePrompt({
   name: 'serviceRecommendationPrompt',
-  input: {schema: ServiceRecommendationInputSchema},
-  output: {schema: ServiceRecommendationOutputSchema},
+  input: { schema: ServiceRecommendationInputSchema },
+  output: { schema: ServiceRecommendationOutputSchema },
   prompt: `You are an AI-powered service recommendation tool. Based on the user's business needs and characteristics, you will recommend the most suitable service for them and explain the reason for your recommendation.\n\nBusiness Needs: {{{businessNeeds}}}\nBusiness Characteristics: {{{businessCharacteristics}}}\n\nRecommended Service: {{recommendedService}}\nReason: {{reason}}`,
 });
 
@@ -41,7 +41,7 @@ export const recommendService = ai.defineFlow(
     outputSchema: ServiceRecommendationOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
+    const { output } = await prompt(input);
     return output!;
   }
 );
