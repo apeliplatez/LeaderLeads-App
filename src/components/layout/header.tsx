@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,6 +47,23 @@ const navItems: NavItem[] = [
   { href: '/insights', label: 'Insights' },
 ];
 
+const promos = [
+  {
+    hook: "🚀 De clics a clientes reales en piloto automático:",
+    text: "Agenda tu Auditoría Gratuita hoy.",
+    highlight: "Auditoría Gratuita",
+    cta: "Aplicar ahora",
+    link: "/contact"
+  },
+  {
+    hook: "🔥 Escala tu facturación sin expandir tu nómina:",
+    text: "Aplica para obtener 1 MES GRATIS de ecosistema.",
+    highlight: "1 MES GRATIS",
+    cta: "Aplicar ahora",
+    link: "/contact"
+  }
+];
+
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
@@ -59,8 +76,45 @@ export default function Header() {
     }
   };
 
+  const [activePromo, setActivePromo] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActivePromo((prev) => (prev + 1) % 2);
+    }, 4000); // Rota cada 4 segundos
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <header className="bg-card/80 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 border-b">
+    <header className="bg-card/80 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 border-b flex flex-col">
+      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-xs md:text-sm font-medium relative h-12 md:h-10 overflow-hidden flex items-center justify-center">
+        {promos.map((promo, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-2 transition-all duration-700 ease-in-out px-4 ${index === activePromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+              }`}
+          >
+            <span className="flex items-center gap-1.5">
+              <span className="font-semibold tracking-wide">{promo.hook}</span>
+            </span>
+            <span className="opacity-95 hidden sm:inline">
+              {promo.text.split(promo.highlight).map((part, i, arr) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && (
+                    <strong className={`font-bold ${promo.highlight === '1 MES GRATIS' ? 'text-accent' : 'underline decoration-white/40 underline-offset-2'}`}>
+                      {promo.highlight}
+                    </strong>
+                  )}
+                </span>
+              ))}
+            </span>
+            <Link href={promo.link} className="inline-flex items-center gap-1 font-bold bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-colors ml-1 group">
+              {promo.cta} <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
+          </div>
+        ))}
+      </div>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Logo />
