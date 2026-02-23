@@ -1,0 +1,15 @@
+# Entornos Locales
+.env
+.env.*
+*.env
+
+# Dependencias
+node_modules/
+
+# Logs
+npm-debug.log*
+firebase-debug.log*
+firebase-debug.err*
+
+# Compilados
+lib/

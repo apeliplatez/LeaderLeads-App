@@ -44,7 +44,7 @@ export default function EcommerceService() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-1" asChild>
-                                <Link href="/#contacto">Habla con un experto en Retail</Link>
+                                <Link href="/auditoria">Habla con un experto en Retail</Link>
                             </Button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export default function EcommerceService() {
                                     ¿Tu tienda actual es lenta o difícil de manejar? Te migramos a Shopify, la plataforma de e-commerce de mayor rendimiento a nivel global, sin perder tus datos ni tu SEO.
                                 </p>
                                 <Button size="lg" className="w-full text-lg py-6" asChild>
-                                    <Link href="/#contacto">Cotizar mi Tienda</Link>
+                                    <Link href="/auditoria">Cotizar mi Tienda</Link>
                                 </Button>
                             </div>
                         </div>

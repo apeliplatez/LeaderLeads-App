@@ -45,6 +45,7 @@ const navItems: NavItem[] = [
   { href: '/somos-ll', label: 'Somos LL' },
   { href: '/#opiniones', label: 'Opiniones' },
   { href: '/insights', label: 'Insights' },
+  { href: '/contact', label: 'Contacto' },
 ];
 
 const promos = [
@@ -53,14 +54,14 @@ const promos = [
     text: "Agenda tu Auditoría Gratuita hoy.",
     highlight: "Auditoría Gratuita",
     cta: "Aplicar ahora",
-    link: "/contact"
+    link: "/auditoria"
   },
   {
     hook: "🔥 Escala tu facturación sin expandir tu nómina:",
     text: "Aplica para obtener 1 MES GRATIS de ecosistema.",
     highlight: "1 MES GRATIS",
     cta: "Aplicar ahora",
-    link: "/contact"
+    link: "/mes-gratis"
   }
 ];
 
@@ -157,7 +158,7 @@ export default function Header() {
               </div>
             ))}
             <Button asChild>
-              <Link href="/contact">Solicitar Auditoría</Link>
+              <Link href="/auditoria">Solicitar Auditoría</Link>
             </Button>
           </nav>
           <ThemeToggle />
@@ -216,7 +217,7 @@ export default function Header() {
                 ))}
                 <div className="px-6 pt-4 pb-10">
                   <Button asChild className="w-full mt-4">
-                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link href="/auditoria" onClick={() => setIsMobileMenuOpen(false)}>
                       Solicitar Auditoría
                     </Link>
                   </Button>

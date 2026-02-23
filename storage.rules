@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Regla global segura por defecto: Rechazar todo lo que no caiga en las carpetas de abajo
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // 1. ZONA PÚBLICA (Logs, imágenes de blogs/insights de LeaderLeads)
+    match /public/{allPaths=**} {
+      // Cualquier persona puede descargar y ver estas imágenes en la web
+      allow read: if true;
+      // Solo tú a través del panel de control de Firebase (que bypass las reglas) podrá subir cosas aquí.
+      // Opcional: Podrías abrir `allow write: if true;` si planeas construir un CMS en Next.js, 
+      // pero por ahora lo mantenemos bloqueado contra extraños para evitar bots de spam de Storage.
+      allow write: if false; 
+    }
+
+    // 2. BUZÓN PRIVADO PARA CLIENTES (Recepción de documentos del embudo)
+    match /clientes/{allPaths=**} {
+      // Los Leads pueden adjuntar archivos y empujarlos aquí vía los formularios de Auditoría
+      allow create: if true;
+      
+      // Nadie en el exterior puede listar o escanear los archivos de tus clientes garantizando confidencialidad NDA.
+      allow read, update, delete: if false;
+    }
+  }
+}

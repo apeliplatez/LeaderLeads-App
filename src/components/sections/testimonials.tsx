@@ -15,25 +15,31 @@ const testimonials = [
   {
     quote: '"LeaderLeads no solo aumentó nuestros leads en un 150%, sino que implementaron un sistema de atención que mejoró nuestra retención. Son socios estratégicos indispensables."',
     name: 'Carlos Sánchez',
-    title: 'Director de Marketing, TechCorp',
+    title: 'Director de Expansión, Entera-te',
     img: 'https://placehold.co/80x80'
   },
   {
-    quote: '"Como coach, mi tiempo es limitado. El Blueprint de Autoridad me liberó de las tareas de captación para enfocarme en mis clientes. Mi facturación creció un 80%."',
+    quote: '"Como fundadora, mi tiempo es limitado. El Blueprint de Autoridad me liberó de las tareas de captación para enfocarme en mis clientes. Mi facturación creció un 80%."',
     name: 'Laura Martínez',
-    title: 'Coach de Liderazgo',
+    title: 'Fundadora, Stoa',
     img: 'https://placehold.co/80x80'
   },
   {
-    quote: '"El Acelerador de Cuentas Premier fue clave. Cerrar tratos de alto valor es más rápido ahora que tenemos un seguimiento profesional y automatizado."',
+    quote: '"El Acelerador de Cuentas Premier fue clave. Cerrar tratos de alto valor es más rápido ahora que tenemos un seguimiento profesional y automatizado con los despachos."',
     name: 'Javier Gómez',
-    title: 'Gerente de Ventas, Innovate Solutions',
+    title: 'Director Comercial, GenereDoc',
     img: 'https://placehold.co/80x80'
   },
-   {
-    quote: '"Su enfoque en datos y resultados es lo que los diferencia. Cada peso invertido tuvo un retorno claro y medible. Totalmente recomendados."',
+  {
+    quote: '"Su enfoque en datos y resultados es lo que los diferencia. Cada peso invertido tuvo un retorno claro y medible para nuestros productores. Totalmente recomendados."',
     name: 'Elena Rodríguez',
-    title: 'Fundadora, E-commerce de Moda',
+    title: 'Directora de Operaciones, Ciudad Agrícola',
+    img: 'https://placehold.co/80x80'
+  },
+  {
+    quote: '"Delegar la captación y el pre-filtro de pacientes a LeaderLeads descongestionó nuestras líneas. Integrarlo con nuestro gestor de historiales fue automático y brillante."',
+    name: 'Dr. Roberto Vargas',
+    title: 'Director Médico, Medix',
     img: 'https://placehold.co/80x80'
   },
 ];
@@ -46,7 +52,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Lo que dicen nuestros clientes</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Resultados reales para líderes que buscan el siguiente nivel.</p>
         </div>
-        <Carousel 
+        <Carousel
           opts={{ align: "start", loop: true }}
           className="w-full"
         >
@@ -56,8 +62,8 @@ export default function TestimonialsSection() {
                 <div className="p-1 h-full">
                   <Card className="h-full flex flex-col justify-center bg-card p-8 rounded-2xl shadow-lg">
                     <CardContent className="flex flex-col items-center text-center p-0">
-                      <Image 
-                        src={testimonial.img} 
+                      <Image
+                        src={testimonial.img}
                         alt={`Foto de ${testimonial.name}`}
                         width={80}
                         height={80}

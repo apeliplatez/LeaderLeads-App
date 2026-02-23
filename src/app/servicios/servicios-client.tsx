@@ -175,8 +175,8 @@ const FinalCtaSection = ({ openModal }: { openModal: () => void }) => (
         <div className="container mx-auto px-6 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Listo para escalar tus operaciones corporativas?</h2>
             <p className="text-xl text-muted-foreground mb-10">Solicita una auditoría gratuita y descubre la estrategia óptima para tu modelo comercial.</p>
-            <Button size="lg" onClick={openModal} className="text-lg px-10 py-6 rounded-full shadow-lg shadow-primary/25">
-                Solicitar Auditoría Inmediata
+            <Button size="lg" className="text-lg px-10 py-6 rounded-full shadow-lg shadow-primary/25" asChild>
+                <Link href="/auditoria">Solicitar Auditoría Inmediata</Link>
             </Button>
         </div>
     </section>

@@ -1,5 +1,7 @@
+"use client";
 
 import Image from 'next/image';
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +12,8 @@ import {
 
 const teamMembers = [
   { name: 'Sofía Castillo', role: 'Jefa de Experiencia del Cliente', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=SC' },
-  { name: 'Ana Vega', role: 'CEO & Fundadora', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=AV' },
-  { name: 'Marco Ríos', role: 'Director de Crecimiento (CRO)', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=MR' },
+  { name: 'Cesar Blanco', role: 'CEO & Fundador', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=CB' },
+  { name: 'Gianluigi Lopez', role: 'Director de Crecimiento (CRO)', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=GL' },
   { name: 'Lucía Valdés', role: 'Estratega de Datos y IA', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=LV' },
   { name: 'David Peña', role: 'Líder de Cuentas Premier', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=DP' },
 ];
@@ -59,6 +61,11 @@ export default function AboutSection() {
         <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">Nuestro Equipo de Líderes</h3>
         <Carousel
           opts={{ align: "start", loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-4">

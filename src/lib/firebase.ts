@@ -1,31 +1,17 @@
-
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// NUEVA LÍNEA: Importa las funciones de App Check
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+  projectId: "abstract-ring-466603-i7",
+  appId: "1:648975036640:web:84e89025ebde8eb989a085",
+  storageBucket: "abstract-ring-466603-i7.firebasestorage.app",
+  apiKey: "AIzaSyAIdjyyVZ8BICcXohDW8_BP9BwfrJK2hDc",
+  authDomain: "abstract-ring-466603-i7.firebaseapp.com",
+  messagingSenderId: "648975036640",
 };
 
 // Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
-
-if (typeof window !== 'undefined') {
-  try {
-    const appCheck = initializeAppCheck(app, {
-      provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!),
-      isTokenAutoRefreshEnabled: true,
-    });
-  } catch (error) {
-    console.error("Error initializing Firebase App Check:", error);
-  }
-}
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app, "firts");
 
 export { app, db };

@@ -1,0 +1,16 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Permite al formulario web crear nuevos Leads sin leer existentes
+    match /Leads/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+    // Permite al formulario registrar la primera interacción 
+    match /Interactions_Log/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+  }
+}

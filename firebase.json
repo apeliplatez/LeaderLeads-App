@@ -1,5 +1,14 @@
 {
+  "firestore": {
+    "database": "firts",
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "bucket": "abstract-ring-466603-i7.firebasestorage.app",
+    "rules": "storage.rules"
+  },
   "hosting": {
+    "site": "abstract-ring-466603-i7",
     "public": "out",
     "cleanUrls": true,
     "trailingSlash": false,
@@ -18,6 +27,15 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
     ]
   }
 }

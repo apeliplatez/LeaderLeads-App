@@ -44,7 +44,7 @@ export default function LeadGenerationService() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-1" asChild>
-                                <Link href="/#contacto">Solicitar Análisis Gratuito</Link>
+                                <Link href="/auditoria">Solicitar Análisis Gratuito</Link>
                             </Button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export default function LeadGenerationService() {
                                     El 80% del presupuesto B2B se desperdicia en audiencias incorrectas. Déjanos auditar tus campañas actuales de forma gratuita y mostraremos exactamente cuánto dinero estás dejando sobre la mesa.
                                 </p>
                                 <Button size="lg" className="w-full text-lg py-6" asChild>
-                                    <Link href="/#contacto">Auditar mis Campañas Ahora</Link>
+                                    <Link href="/auditoria">Auditar mis Campañas Ahora</Link>
                                 </Button>
                             </div>
                         </div>

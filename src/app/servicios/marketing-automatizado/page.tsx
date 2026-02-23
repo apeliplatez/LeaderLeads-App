@@ -44,7 +44,7 @@ export default function MarketingAutomatedService() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-1" asChild>
-                                <Link href="/#contacto">Automatiza tu embudo hoy</Link>
+                                <Link href="/auditoria">Automatiza tu embudo hoy</Link>
                             </Button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export default function MarketingAutomatedService() {
                                     ¿Aún haces seguimiento en Excel o notas de papel? Nuestro equipo experto trazará el 'blueprint' de automatización ideal para el ciclo de venta de tu modelo B2B. Agenda hoy mismo.
                                 </p>
                                 <Button size="lg" className="w-full text-lg py-6" asChild>
-                                    <Link href="/#contacto">Agendar Mapeo de Flujos</Link>
+                                    <Link href="/auditoria">Agendar Mapeo de Flujos</Link>
                                 </Button>
                             </div>
                         </div>

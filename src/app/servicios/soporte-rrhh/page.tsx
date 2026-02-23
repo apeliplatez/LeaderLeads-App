@@ -44,7 +44,7 @@ export default function HRSupportService() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/25 transition-all hover:-translate-y-1" asChild>
-                                <Link href="/#contacto">Integra a tu Setter Hoy</Link>
+                                <Link href="/auditoria">Integra a tu Setter Hoy</Link>
                             </Button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export default function HRSupportService() {
                                     ¿No estás seguro de si necesitas un Closer o un Appointment Setter? Programemos una sesión breve donde analizaremos el cuello de botella de tu equipo actual.
                                 </p>
                                 <Button size="lg" className="w-full text-lg py-6" asChild>
-                                    <Link href="/#contacto">Evaluar mi Equipo Comercial</Link>
+                                    <Link href="/auditoria">Evaluar mi Equipo Comercial</Link>
                                 </Button>
                             </div>
                         </div>
