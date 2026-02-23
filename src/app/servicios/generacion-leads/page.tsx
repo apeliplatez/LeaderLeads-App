@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Generación de Leads B2B | LeaderLeads',
     description: 'Sistema de adquisición de prospectos de alto valor con Google Ads y Meta Ads.',
+    keywords: ["generación de leads B2B", "campañas Google Ads B2B", "Meta Ads para empresas", "leads cualificados alto ticket", "embudos de conversión corporativos"]
 };
 
 const features = [

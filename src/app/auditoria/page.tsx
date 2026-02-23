@@ -7,6 +7,7 @@ import { CheckCircle2 } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Auditoría Gratuita - LeaderLeads',
     description: 'Solicita una auditoría estratégica gratuita de tus sistemas de captación y ventas B2B. Descubre cuellos de botella y oportunidades de crecimiento.',
+    keywords: ["auditoría comercial gratis", "diagnóstico de ventas B2B", "consultoría de marketing corporativo", "análisis embudo de ventas"]
 };
 
 export default function AuditoriaPage() {

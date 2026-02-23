@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Construcción y Gestión de E-commerce | LeaderLeads',
     description: 'Tiendas online optimizadas para máxima conversión. Shopify y plataformas líderes.',
+    keywords: ["desarrollo e-commerce Shopify", "migración de tiendas online", "tiendas optimizadas B2B", "aumento de conversión retail"]
 };
 
 const features = [

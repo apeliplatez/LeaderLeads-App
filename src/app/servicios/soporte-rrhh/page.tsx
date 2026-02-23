@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Soporte en RRHH y Closers | LeaderLeads',
     description: 'Talento humano entrenado para cualificar y cerrar tus ventas. Appointment Setters y Closers B2B bajo demanda.',
+    keywords: ["appointment setters B2B", "closers de ventas", "soporte comercial remoto", "equipos de ventas on-demand", "tercerización de SDRs"]
 };
 
 const features = [

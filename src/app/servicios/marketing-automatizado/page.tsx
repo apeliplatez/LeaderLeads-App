@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Marketing Automatizado B2B | LeaderLeads',
     description: 'Funnels inteligentes que nutren e incentivan la compra utilizando Email y automatización.',
+    keywords: ["marketing automatizado B2B", "embudos automatizados", "flujos de trabajo CRM", "nutrición de leads", "automatización de WhatsApp"]
 };
 
 const features = [
