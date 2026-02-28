@@ -11,11 +11,10 @@ import {
 } from "@/components/ui/carousel"
 
 const teamMembers = [
-  { name: 'Sofía Castillo', role: 'Jefa de Experiencia del Cliente', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=SC' },
-  { name: 'Cesar Blanco', role: 'CEO & Fundador', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=CB' },
-  { name: 'Gianluigi Lopez', role: 'Director de Crecimiento (CRO)', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=GL' },
-  { name: 'Lucía Valdés', role: 'Estratega de Datos y IA', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=LV' },
-  { name: 'David Peña', role: 'Líder de Cuentas Premier', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=DP' },
+  { name: 'Cesar Daniel Blanco', role: 'CEO & Fundador', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=CB' },
+  { name: 'Oscar Reyes', role: 'CTO', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=OR' },
+  { name: 'Anuar Ali Mendez', role: 'CMO', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=AM' },
+  { name: 'Gianluigi Lopez', role: 'COO', img: 'https://placehold.co/150x150/e0e7ff/4338ca?text=GL' },
 ];
 
 const TeamMemberCard = ({ member }: { member: typeof teamMembers[0] }) => (
