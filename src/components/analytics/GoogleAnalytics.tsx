@@ -1,29 +1,29 @@
 "use client";
 
-import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from "react";
 
 const pageview = (GA_MEASUREMENT_ID: string, url: string) => {
-  (window as any).gtag?.("config", GA_MEASUREMENT_ID, {
-    page_path: url,
-  });
+  if (typeof window !== "undefined") {
+    (window as any).gtag?.("config", GA_MEASUREMENT_ID, {
+      page_path: url,
+    });
+  }
 };
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) {
+    if (!GA_MEASUREMENT_ID || typeof window === "undefined") {
       return;
     }
-    
-    const search = searchParams.toString();
-    
-    const url = pathname + (search ? `?${search}` : ""); 
-    
+
+    const search = searchParams?.toString();
+    const url = pathname + (search ? `?${search}` : "");
+
     pageview(GA_MEASUREMENT_ID, url);
 
   }, [pathname, searchParams, GA_MEASUREMENT_ID]);
@@ -35,13 +35,12 @@ export default function GoogleAnalytics() {
 
   return (
     <>
-      <Script 
-        strategy="afterInteractive" 
+      <script
+        async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script 
-        id="google-analytics" 
-        strategy="afterInteractive"
+      ></script>
+      <script
+        id="google-analytics"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -50,7 +49,7 @@ export default function GoogleAnalytics() {
             gtag('config', '${GA_MEASUREMENT_ID}');
           `,
         }}
-      />
+      ></script>
     </>
   );
 }
