@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import ServiceFinderForm from '@/components/ai/service-finder-form';
-import { BrainCircuit, ArrowRight, BarChart, Settings, ShoppingCart, Users } from 'lucide-react';
+import { BrainCircuit, ArrowRight, BarChart, Settings, ShoppingCart, Users, MonitorSmartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -107,6 +107,12 @@ const ServicesGridSection = () => {
             description: 'Tiendas optimizadas para máxima conversión. Operamos y estructuramos tu ecosistema de venta directa digital con diseño persuasivo y UX impecable.',
             href: '/servicios/ecommerce',
             icon: ShoppingCart,
+        },
+        {
+            title: 'Desarrollo de Software a Medida',
+            description: 'Transformación digital radical. Creamos plataformas corporativas, CRMs a medida, aplicaciones móviles y automatizaciones complejas integradas a tus operaciones.',
+            href: '/servicios/desarrollo-a-medida',
+            icon: MonitorSmartphone,
         },
         {
             title: 'Soporte en RRHH para tus leads',

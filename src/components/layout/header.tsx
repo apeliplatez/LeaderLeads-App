@@ -35,6 +35,11 @@ const navItems: NavItem[] = [
         description: 'Tiendas optimizadas para máxima conversión.',
       },
       {
+        href: '/servicios/desarrollo-a-medida',
+        label: 'Desarrollo de Software a Medida',
+        description: 'Plataformas B2B, automatizaciones y apps corporativas.',
+      },
+      {
         href: '/servicios/soporte-rrhh',
         label: 'Soporte en RRHH para tus leads',
         description: 'Talento humano entrenado para cerrar tus ventas.',
