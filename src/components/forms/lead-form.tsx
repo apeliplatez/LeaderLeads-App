@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { createLead, PersonalData } from "@/lib/firebase/services/leads";
+import { sendCAPIEvent } from "@/lib/capi";
 
 export type FormType = "auditoria" | "mes-gratis" | "contacto";
 
@@ -49,6 +50,21 @@ export function LeadForm({ type, sourceName }: LeadFormProps) {
 
         if (result.success) {
             setStatus("success");
+
+            // Despachar evento Lead a Meta CAPI (Server-to-Server) protegiendo PII con SHA-256
+            const customData = {
+                form_type: type,
+                content_name: data.selectedService || data.contactReason || data.problem || "Auditoria General",
+                currency: "USD"
+            };
+
+            // S2S Connection
+            sendCAPIEvent("Lead", personalData.email || "", customData);
+
+            // Client-Side Fallback (Para robustez de Event Match Quality)
+            if (typeof window !== 'undefined' && (window as any).fbq) {
+                (window as any).fbq('track', 'Lead', customData);
+            }
         } else {
             console.error(result.error);
             setStatus("error");

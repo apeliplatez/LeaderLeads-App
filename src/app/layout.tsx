@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider';
 import { FirebaseProvider } from '@/components/providers/firebase-provider';
 import { Suspense } from 'react';
 import GoogleAnalyticsWrapper from '@/components/analytics/GoogleAnalyticsWrapper';
+import MetaPixel from '@/components/analytics/meta-pixel';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -81,6 +82,7 @@ export default function RootLayout({
             {/* PASO 2: Envuelve el Wrapper con Suspense */}
             <Suspense>
               <GoogleAnalyticsWrapper />
+              <MetaPixel />
             </Suspense>
             {children}
             <Toaster />

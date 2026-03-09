@@ -12,6 +12,12 @@
     "public": "out",
     "cleanUrls": true,
     "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "/api/capi",
+        "function": "sendMetaConversion"
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(html|txt|json)",

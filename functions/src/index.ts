@@ -99,3 +99,91 @@ export const sendWelcomeEmailCallable = functions.https.onCall(async (data, cont
         return { success: false, error: "Error de Servidor Interno" };
     }
 });
+
+import { onRequest } from "firebase-functions/v2/https";
+import { defineSecret } from "firebase-functions/params";
+
+// Definir el secreto en el entorno de v2
+const metaAccessToken = defineSecret("META_ACCESS_TOKEN");
+
+/**
+ * Endpoint HTTP (Cloud Function v2) para Integración de Meta Conversions API (S2S)
+ * Restringe los orígenes (CORS) a dominios productivos explícitos y accede a Secret Manager
+ */
+export const sendMetaConversion = onRequest({
+    secrets: [metaAccessToken],
+    cors: ["https://leaderleads.co", "https://abstract-ring-466603-i7.web.app", "http://localhost:3000"],
+    maxInstances: 10,
+}, async (request, response) => {
+    // 1. Validar Método
+    if (request.method !== "POST") {
+        response.status(405).json({ error: "Method Not Allowed" });
+        return;
+    }
+
+    try {
+        const payload = request.body;
+
+        // 2. Extraer el Payload formateado por el Frontend
+        const { eventName, eventTime, eventId, eventSourceUrl, userData, customData } = payload;
+        const PIXEL_ID = "926585633455263"; // Pixel ID fijo, es público
+
+        if (!eventName || !userData || !userData.em) {
+            response.status(400).json({ error: "Missing required fields (eventName, em, etc)" });
+            return;
+        }
+
+        // 3. Estructurar el Evento según la Graph API de Meta
+        const metaEventData = [{
+            event_name: eventName,
+            event_time: eventTime || Math.floor(Date.now() / 1000),
+            action_source: "website",
+            event_id: eventId, // Para deduplicación
+            event_source_url: eventSourceUrl,
+            user_data: {
+                // Email y Telefono obligatoriamente hasheados en SHA-256 por el Frontend
+                em: userData.em,
+                ph: userData.ph,
+                // Client User Agent e IP (Si estuvieran disponibles)
+                client_ip_address: request.ip || request.headers['x-forwarded-for'],
+                client_user_agent: request.headers['user-agent'],
+                // Cookies FBP y FBC
+                fbp: userData.fbp,
+                fbc: userData.fbc
+            },
+            custom_data: customData // ej. currency, value
+        }];
+
+        const metaPayload = {
+            data: metaEventData,
+            // Opcional: test_event_code: "TEST14264" si estuvieras depurando
+        };
+
+        // 4. Obtener Llave del Secret Manager en Tiempo Real
+        const token = metaAccessToken.value();
+
+        console.log(`📡 Enviando Evento '${eventName}' a Meta CAPI - Pixel: ${PIXEL_ID}`);
+
+        // 5. Despachar a Meta
+        const metaResponse = await fetch(`https://graph.facebook.com/v19.0/${PIXEL_ID}/events?access_token=${token}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(metaPayload),
+        });
+
+        const metaResult = await metaResponse.json();
+
+        if (!metaResponse.ok) {
+            console.error("❌ Falló el envío a Meta:", JSON.stringify(metaResult));
+            response.status(500).json({ success: false, error: metaResult });
+            return;
+        }
+
+        console.log("✅ Evento recibido por Meta:", JSON.stringify(metaResult));
+        response.status(200).json({ success: true, meta_response: metaResult });
+
+    } catch (error) {
+        console.error("Server Error S2S Integration:", error);
+        response.status(500).json({ success: false, error: "Internal Server Error" });
+    }
+});
