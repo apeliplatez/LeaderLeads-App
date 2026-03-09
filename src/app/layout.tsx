@@ -79,11 +79,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <FirebaseProvider>
-            {/* PASO 2: Envuelve el Wrapper con Suspense */}
-            <Suspense>
+            {/* PASO 2: Analytics Envuelto con Suspense Aislado */}
+            <Suspense fallback={null}>
               <GoogleAnalyticsWrapper />
-              <MetaPixel />
             </Suspense>
+            <MetaPixel />
             {children}
             <Toaster />
           </FirebaseProvider>

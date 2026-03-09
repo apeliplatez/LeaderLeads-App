@@ -1,10 +1,10 @@
 'use client';
 
-import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
 
-export default function MetaPixel() {
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, Suspense } from 'react';
+
+function MetaPixelEvents() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -15,9 +15,13 @@ export default function MetaPixel() {
         }
     }, [pathname, searchParams]);
 
+    return null;
+}
+
+export default function MetaPixel() {
     return (
         <>
-            <Script
+            <script
                 id="meta-pixel"
                 dangerouslySetInnerHTML={{
                     __html: `
@@ -43,6 +47,9 @@ export default function MetaPixel() {
                     alt=""
                 />
             </noscript>
+            <Suspense fallback={null}>
+                <MetaPixelEvents />
+            </Suspense>
         </>
     );
 }
