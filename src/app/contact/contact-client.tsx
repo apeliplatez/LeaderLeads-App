@@ -43,7 +43,14 @@ export default function ContactClient() {
                       <div className="w-12 h-12 rounded-xl border border-white/5 bg-card/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
                         <Phone className="h-5 w-5 text-primary" />
                       </div>
-                      <a href="tel:+584220128670" className="hover:text-primary transition-colors">+58 422 012 8670</a>
+                      <a
+                        href="https://wa.me/584220128670?text=Hola,%20me%20comunico%20desde%20la%20p%C3%A1gina%20web%20de%20LeaderLeads%20para%20obtener%20informaci%C3%B3n"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors"
+                      >
+                        +58 422 012 8670
+                      </a>
                     </div>
                     <div className="flex items-center gap-4 group">
                       <div className="w-12 h-12 rounded-xl border border-white/5 bg-card/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
