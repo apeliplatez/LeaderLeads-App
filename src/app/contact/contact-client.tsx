@@ -37,19 +37,19 @@ export default function ContactClient() {
                       <div className="w-12 h-12 rounded-xl border border-white/5 bg-card/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
                         <MapPin className="h-5 w-5 text-primary" />
                       </div>
-                      <span>123 Av. Principal, Ciudad de Panamá</span>
+                      <span>Maracay, Venezuela</span>
                     </div>
                     <div className="flex items-center gap-4 group">
                       <div className="w-12 h-12 rounded-xl border border-white/5 bg-card/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
                         <Phone className="h-5 w-5 text-primary" />
                       </div>
-                      <a href="tel:+1234567890" className="hover:text-primary transition-colors">(123) 456-7890</a>
+                      <a href="tel:+584220128670" className="hover:text-primary transition-colors">+58 422 012 8670</a>
                     </div>
                     <div className="flex items-center gap-4 group">
                       <div className="w-12 h-12 rounded-xl border border-white/5 bg-card/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
                         <Mail className="h-5 w-5 text-primary" />
                       </div>
-                      <a href="mailto:ceo@leaderleads.co" className="hover:text-primary transition-colors">ceo@leaderleads.co</a>
+                      <a href="mailto:info@leaderleads.co" className="hover:text-primary transition-colors">info@leaderleads.co</a>
                     </div>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function ContactClient() {
                   <h3 className="text-2xl font-heading font-bold text-foreground mb-4 mt-12">HQ Latam</h3>
                   <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg border border-white/10 opacity-70 hover:opacity-100 transition-opacity">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126442.27063260799!2d-79.62531649646536!3d8.981881729013093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca8f1dbeecbbf%3A0x6d9f8df0b55ed996!2sPanama%20City%2C%20Panam%C3%A1!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125547.45831968817!2d-67.6830743!3d10.2372551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c803cb2cdd7%3A0xe5a36ebd774f9d02!2sMaracay%2C%20Aragua%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
