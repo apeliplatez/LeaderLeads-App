@@ -24,7 +24,7 @@ export const posts: BlogPost[] = [
         badgeVariant: 'default',
         dataAiHint: 'crm transition',
         slug: 'por-que-usar-crm-empresas-venezuela',
-        publishedAt: '2026-03-10T10:00:00Z',
+        publishedAt: '2026-03-09T10:00:00Z',
         author: {
             name: 'Cesar Daniel Blanco',
             role: 'CEO & Consultor B2B'
@@ -148,6 +148,14 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
     return posts.find((p) => p.slug === slug);
 }
 
+export function getPublishedPosts(): BlogPost[] {
+    const now = new Date();
+    return posts.filter((p) => new Date(p.publishedAt) <= now);
+}
+
 export function getRelatedPosts(currentSlug: string, count: number = 3): BlogPost[] {
-    return posts.filter((p) => p.slug !== currentSlug).slice(0, count);
+    const now = new Date();
+    return posts
+        .filter((p) => p.slug !== currentSlug && new Date(p.publishedAt) <= now)
+        .slice(0, count);
 }

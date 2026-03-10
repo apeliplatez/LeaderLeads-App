@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
-import { posts, type BlogPost } from '@/lib/data/posts';
+import { getPublishedPosts, type BlogPost } from '@/lib/data/posts';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { format } from 'date-fns';
@@ -49,8 +49,9 @@ const BlogPostCard = ({ post }: { post: BlogPost }) => (
 );
 
 export default function InsightsPage() {
-  const featuredPost = posts[0];
-  const regularPosts = posts.slice(1);
+  const publishedPosts = getPublishedPosts();
+  const featuredPost = publishedPosts[0];
+  const regularPosts = publishedPosts.slice(1);
 
   return (
     <div className="flex flex-col min-h-screen bg-background font-sans text-foreground">

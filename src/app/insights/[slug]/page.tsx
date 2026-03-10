@@ -9,7 +9,7 @@ import Footer from '@/components/layout/footer';
 import ProgressBar from '@/components/ui/progress-bar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { getPostBySlug, getRelatedPosts, posts } from '@/lib/data/posts';
+import { getPostBySlug, getRelatedPosts, getPublishedPosts } from '@/lib/data/posts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface PostPageProps {
@@ -20,7 +20,7 @@ interface PostPageProps {
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
     const resolvedParams = await params;
     const post = getPostBySlug(resolvedParams.slug);
-    if (!post) return {};
+    if (!post || new Date(post.publishedAt) > new Date()) return {};
 
     return {
         title: `${post.title} | Insights LeaderLeads`,
@@ -51,7 +51,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
 // Soporte para export estático
 export async function generateStaticParams() {
-    return posts.map((post) => ({
+    const publishedPosts = getPublishedPosts();
+    return publishedPosts.map((post) => ({
         slug: post.slug,
     }));
 }
@@ -60,7 +61,7 @@ export default async function PostPage({ params }: PostPageProps) {
     const resolvedParams = await params;
     const post = getPostBySlug(resolvedParams.slug);
 
-    if (!post) {
+    if (!post || new Date(post.publishedAt) > new Date()) {
         notFound();
     }
 
