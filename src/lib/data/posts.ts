@@ -17,117 +17,129 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
     {
-        category: 'ESTRATEGIA',
-        title: 'Más allá de los Leads: Cómo construir una máquina de retención',
-        description: 'Descubre por qué la verdadera rentabilidad no está en la primera venta, sino en la segunda, tercera y cuarta.',
-        image: 'https://placehold.co/1200x630/17191E/00E5FF?text=Maquina+de+Retencion',
+        category: 'TECNOLOGÍA & VENTAS',
+        title: '¿Por qué tu empresa en Venezuela necesita un CRM en 2026? Mitos y Realidades',
+        description: 'Descubra cómo superar el "Excel" como base de datos. Explicamos cómo la hiperinflación y la competencia obligan a tener trazabilidad de cada dólar en tu embudo B2B.',
+        image: 'https://placehold.co/1200x630/17191E/00E5FF?text=CRM+en+Venezuela+2026',
         badgeVariant: 'default',
-        dataAiHint: 'strategy chart',
-        slug: 'maquina-de-retencion',
-        publishedAt: '2026-02-23T08:00:00Z',
+        dataAiHint: 'crm transition',
+        slug: 'por-que-usar-crm-empresas-venezuela',
+        publishedAt: '2026-03-10T10:00:00Z',
         author: {
-            name: "Equipo de Analytics",
-            role: "LeaderLeads Strategy HQ"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "El ecosistema B2B está colapsado de empresas compitiendo ferozmente por capturar el mismo conjunto limitado de Leads fríos. Los costos de adquisición en canales como Google Ads o LinkedIn Ads han aumentado de forma sostenida a lo largo de los años. Sin embargo, la obsesión exclusiva con la inyección constante de prospectos a la parte alta del embudo suele dejar una hemorragia invisible en la parte baja: la retención.",
-            "Para construir una máquina financiera verdaderamente robusta, tu esfuerzo no debe terminar cuando el contrato se firma. Ese hito es literalmente el momento de arranque. Según las últimas métricas de la industria, retener a un cliente cuesta entre 5 y 7 veces menos que adquirir a uno nuevo. Tu enfoque debe mutar para centrarse en los 'Leading Indicators' (indicadores tempranos) de insatisfacción o adopción de tu producto/servicio en los primeros 30 días.",
-            "INLINE_CTA_AUDITORIA",
-            "Las métricas de rentabilidad escalan logarítmicamente cuando dominas el arte del Cross-Selling y Up-Selling. No se trata sólo de empujar contratos largos, sino de estar activamente mapeando la evolución de las necesidades de la empresa de tu cliente. Cuantos más problemas logres interceptar en base a la relación actual, mayor será su barrera mental para darse de baja de tus servicios."
+            'En el dinámico ecosistema empresarial de Venezuela, la gestión dependiente de hojas de cálculo de Excel y blocs de notas ha dejado de ser competitiva. Las empresas locales operan ahora bajo una presión por rentabilidad máxima, y los métodos analógicos provocan la fuga silenciosa de miles de dólares en prospectos fríos.',
+            'Un "Customer Relationship Management" (CRM) no es más que un sistema centralizado de control corporativo. Sin embargo, en nuestro país todavía existen gerentes que lo consideran un "lujo" de corporaciones internacionales. Esto representa el mito número uno: El CRM no es un lujo, es el único salvavidas frente a un mercado hiper-inflacionario donde cada contacto cuesta dinero en publicidad.',
+            'INLINE_CTA_AUDITORIA',
+            'La realidad es cruda: la mayoría de los leads en Venezuela llegan a través de WhatsApp. Cuando dependemos exclusivamente de un agente comercial interactuando con WhatsApp sin trazabilidad global, su rotación laboral significa la pérdida total de nuestra base histórica de clientes orgánicos.',
+            'Implementar un CRM en 2026 obliga a tu fuerza de ventas a trabajar bajo un "pipeline" (embudo) estructurado. Esta estructura transparente es la única que permite a los Directores de Operaciones (COO) y CEOs visualizar cuánto dinero hay estancado en la mesa de negociaciones y por qué un prospecto lleva 15 días sin avanzar en el proceso de decisión de compra.',
+            'INLINE_CTA_TRIAL',
+            'Otro factor diferenciador vital: la cualificación B2B automatizada. Empresas venezolanas vanguardistas hoy son capaces de rastrear no sólo los correos abiertos, sino los clicks en cotizaciones PDF, reaccionando mucho más rápido que la competencia local aún anclada a los envíos masivos impersonales.',
+            'En resumen, la madurez digital exige relegar el Excel a roles funcionales financieros y migrar la gestión operativa de relaciones al CRM. Quienes opten por este blindaje tecnológico en Venezuela escalarán sobre el estancamiento táctico de su competencia durante la segunda mitad de esta década.'
         ]
     },
     {
-        category: 'VENTAS HIGH-TICKET',
-        title: 'Los 5 errores que matan tus ventas de alto valor (y cómo evitarlos)',
-        description: 'Analizamos los fallos más comunes en ciclos de venta largos y te damos el plan para acelerar tus cierres.',
-        image: 'https://placehold.co/1200x630/17191E/FF5E00?text=Ventas+High-Ticket',
+        category: 'PERFORMANCE',
+        title: 'Clientify en Venezuela: El CRM ideal para Equipos de Ventas por WhatsApp',
+        description: 'Análisis técnico de Clientify. Por qué su integración nativa con WhatsApp Business API salva negocios locales que operan 90% por chat.',
+        image: 'https://placehold.co/1200x630/17191E/FF5E00?text=Clientify+WhatsApp',
         badgeVariant: 'secondary',
-        dataAiHint: 'sales meeting',
-        slug: 'errores-ventas-alto-valor',
-        publishedAt: '2026-02-15T10:30:00Z',
+        dataAiHint: 'clientify platform',
+        slug: 'clientify-crm-venezuela-whatsapp',
+        publishedAt: '2026-03-11T10:00:00Z',
         author: {
-            name: "Dirección Comercial",
-            role: "LeaderLeads Sales Team"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "El B2B High-Ticket no funciona bajo la misma física que la venta por impulso. Aquí no compites con el bolsillo del prospecto, compites contra el Status Quo de la corporación. Uno de los peores errores es no identificar a todos los Stakeholders ocultos del proceso de compra.",
-            "A veces le estás vendiendo tu solución increíble y disruptiva al CFO, pero resulta que el equipo de Operaciones es quien la va a sufrir/implementar. Si no te pones a ese equipo de tu lado temprano, vetarán y silenciarán tu victoria.",
-            "INLINE_CTA_TRIAL",
-            "La fricción debe eliminarse del Discovery. Un consultor que sólo inyecta su guion estándar se percibe instantáneamente como una pérdida de tiempo comercial. Hay que preguntar por diagnósticos específicos, y, más importante, hay que saber cuándo decir 'Nosotros no somos para ustedes'."
+            'Articulo programado para el Día 2.'
         ]
     },
     {
         category: 'TECNOLOGÍA',
-        title: 'IA en Atención al Cliente: ¿Reemplazo o superpoder?',
-        description: 'Cómo usar la inteligencia artificial para potenciar a tu equipo de soporte, no para sustituirlo.',
-        image: 'https://placehold.co/1200x630/17191E/7828C8?text=IA+Atencion+al+Cliente',
+        title: 'Clientify vs Kommo (AmoCRM): ¿Cuál CRM domina el mercado venezolano?',
+        description: 'Un cuadrante de evaluación objetivo. Precios en USD, integración de pagos locales, y curva de aprendizaje para agentes de ventas venezolanos.',
+        image: 'https://placehold.co/1200x630/17191E/7828C8?text=Kommo+vs+Clientify',
         badgeVariant: 'destructive',
-        dataAiHint: 'customer service',
-        slug: 'ia-atencion-cliente',
-        publishedAt: '2026-02-10T14:15:00Z',
+        dataAiHint: 'crm comparison',
+        slug: 'clientify-vs-kommo-amocrm-venezuela',
+        publishedAt: '2026-03-12T10:00:00Z',
         author: {
-            name: "Equipo de Arquitectura IA",
-            role: "LeaderLeads Tech HQ"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "La narrativa popular asume que los LLMs vinieron para borrar a todos los operadores de atención al público de la faz del planeta. En la práctica real del B2B, eso es una falacia. Una red LLM excelente sin una heurística humana superior, es sólo un lorito erudito con alta latencia.",
-            "Las corporaciones inteligentes no están reemplazando a su tier 2 de soporte. Lo están dotando de modelos tipo 'Copilot'. En instantes, un operador tiene el sentiment-analysis del cliente, toda su bitácora de tickets, y una sugerencia de respuesta redactada magistralmente lista para su aprobación final.",
-            "INLINE_CTA_AUDITORIA",
-            "Acelerar a un humano en un 400% genera mucha más tracción empática y de vida de red en tus clientes corporativos. Si un Ticket de Soporte demoraba 3 horas en resolverse y ahora toma 4 minutos, esa cuenta es dinero líquido en tu balanza mensual."
+            'Articulo programado para el Día 3.'
         ]
     },
     {
-        category: 'MARKETING DIGITAL',
-        title: 'El Futuro del SEO: Tendencias que Dominarán la Próxima Década',
-        description: 'Exploramos cómo la búsqueda por voz, la IA y la experiencia de usuario están redefiniendo el SEO.',
-        image: 'https://placehold.co/1200x630/17191E/00E5FF?text=El+Futuro+del+SEO',
+        category: 'ESCALABILIDAD',
+        title: 'HubSpot B2B: Cuándo abandonar los CRMs básicos y escalar tu corporación',
+        description: 'Orientado a C-Level. Explicar el concepto de "Customer Hub" y cómo justificar el ticket alto de HubSpot mediante el ROI cerrado.',
+        image: 'https://placehold.co/1200x630/17191E/00E5FF?text=HubSpot+B2B',
         badgeVariant: 'default',
-        dataAiHint: 'seo trends',
-        slug: 'futuro-del-seo',
-        publishedAt: '2026-02-05T09:00:00Z',
+        dataAiHint: 'hubspot enterprise',
+        slug: 'hubspot-empresas-b2b-venezuela',
+        publishedAt: '2026-03-13T10:00:00Z',
         author: {
-            name: "Mesa de Redacción",
-            role: "LeaderLeads Analytics"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "El SEO ya no es llenar cabeceras con h1 repetidos hasta el cansancio. Lo que define el Index Rank ahora mismo es el concepto 'Helpful Content' y los Web Vitals: un mix mortífero donde el código técnico se abraza con el valor real aportado al usuario.",
-            "Más que nunca, la Inyección Semántica y los Schemas son el verdadero idioma de Google. Declarar tus artículos bajo esquemas JSON-LD (NewsArticle, FAQPage) le permiten a los rastreadores clasificar la certidumbre de tu contenido a toda velocidad."
+            'Articulo programado para el Día 4.'
         ]
     },
     {
-        category: 'E-COMMERCE',
-        title: 'Psicología de Precios: 7 Estrategias para Aumentar tu Conversión',
-        description: 'Aprende a fijar precios que no solo cubran costos, sino que también comuniquen valor y persuadan a la compra.',
-        image: 'https://placehold.co/1200x630/17191E/FF5E00?text=Psicologia+de+Precios',
+        category: 'GESTIÓN RH',
+        title: 'Cómo lograr que tus vendedores sí usen el CRM (Y dejen de anotar en agendas)',
+        description: 'El lado humano de la tecnología. Abordar el miedo del vendedor a ser "espiado" vs el control del director. Estrategias de incentivos.',
+        image: 'https://placehold.co/1200x630/17191E/FF5E00?text=Adopcion+del+CRM',
         badgeVariant: 'secondary',
-        dataAiHint: 'ecommerce pricing',
-        slug: 'psicologia-de-precios',
-        publishedAt: '2026-01-20T11:45:00Z',
+        dataAiHint: 'team management',
+        slug: 'adopcion-crm-vendedores-venezuela',
+        publishedAt: '2026-03-14T10:00:00Z',
         author: {
-            name: "E-Commerce Advisors",
-            role: "LeaderLeads Retail"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "Vender a $9.99 en el B2B Corporativo no funciona y lastima el anclaje de tu percepción de valor. El 'Charm Pricing' sirve para los tickets en mercados de consumo (B2C).",
-            "Cuando vendes plataformas corporativas, usar números cerrados y robustos, complementados con matrices de Tier (Gold, Pro, Enterprise) es lo que activa el contraste de anclaje correcto de tu buyer persona."
+            'Articulo programado para el Día 5.'
         ]
     },
     {
-        category: 'CRECIMIENTO',
-        title: 'Growth Hacking para Startups: Tácticas de Bajo Costo y Alto Impacto',
-        description: 'Descubre tácticas creativas y eficientes para adquirir usuarios y crecer rápidamente sin un gran presupuesto de marketing.',
-        image: 'https://placehold.co/1200x630/17191E/7828C8?text=Growth+Hacking',
+        category: 'SISTEMAS',
+        title: 'Integrando tu CRM: WhatsApp, Instagram y Facturación en un solo Dashboard',
+        description: 'Casos prácticos donde un DM de Instagram crea automáticamente un negocio en el embudo (Pipeline) sin intervención humana.',
+        image: 'https://placehold.co/1200x630/17191E/7828C8?text=Integraciones+Omnicanal',
         badgeVariant: 'destructive',
-        dataAiHint: 'startup growth',
-        slug: 'growth-hacking-startups',
-        publishedAt: '2026-01-10T08:15:00Z',
+        dataAiHint: 'api integration',
+        slug: 'integrar-crm-whatsapp-instagram-ventas',
+        publishedAt: '2026-03-15T10:00:00Z',
         author: {
-            name: "Equipo de Analytics",
-            role: "LeaderLeads Strategy HQ"
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
         },
         contentParagraphs: [
-            "El Growth Hacking no se refiere a la manipulación barata. Hablamos de sistematizar el bucle iterativo de recolección, ideación, testeo A/B y métricas.",
-            "No asumas que un webinar pregrabado tracciona. Trátalo como una hipótesis, libéralo segmentado, anota los Drop-offs en el minuto 14 y regraba lo que no captó la atención. Testeo veloz y sin dolor."
+            'Articulo programado para el Día 6.'
+        ]
+    },
+    {
+        category: 'INTELIGENCIA ARTIFICIAL',
+        title: 'Inteligencia Artificial B2B: El futuro de la gestión de clientes (CRM) en LATAM',
+        description: 'Tendencias 2026. Cómo la IA resume conversaciones, califica leads automáticamente y predice los ingresos del próximo trimestre (Forecasting).',
+        image: 'https://placehold.co/1200x630/17191E/00E5FF?text=IA+en+CRM',
+        badgeVariant: 'default',
+        dataAiHint: 'ai forecasting',
+        slug: 'inteligencia-artificial-crm-b2b-latam',
+        publishedAt: '2026-03-16T10:00:00Z',
+        author: {
+            name: 'Cesar Daniel Blanco',
+            role: 'CEO & Consultor B2B'
+        },
+        contentParagraphs: [
+            'Articulo programado para el Día 7.'
         ]
     }
 ];
