@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from 'react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { LeadForm } from '@/components/forms/lead-form';
 
 export default function ContactClient() {
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -62,16 +65,27 @@ export default function ContactClient() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-heading font-bold text-foreground mb-4 mt-12">HQ Latam</h3>
-                  <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg border border-white/10 opacity-70 hover:opacity-100 transition-opacity">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125547.45831968817!2d-67.6830743!3d10.2372551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c803cb2cdd7%3A0xe5a36ebd774f9d02!2sMaracay%2C%20Aragua%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen={true}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
+                  <div
+                    className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg border border-white/10 opacity-70 hover:opacity-100 transition-opacity cursor-pointer relative bg-card flex items-center justify-center group"
+                    onClick={() => setIsMapLoaded(true)}
+                    onMouseEnter={() => setIsMapLoaded(true)}
+                  >
+                    {!isMapLoaded ? (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground group-hover:text-primary transition-colors">
+                        <MapPin className="h-10 w-10 mb-2 opacity-60" />
+                        <span className="text-sm font-medium">Cargar Mapa Interactivo</span>
+                      </div>
+                    ) : (
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125547.45831968817!2d-67.6830743!3d10.2372551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803c803cb2cdd7%3A0xe5a36ebd774f9d02!2sMaracay%2C%20Aragua%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    )}
                   </div>
                 </div>
               </div>

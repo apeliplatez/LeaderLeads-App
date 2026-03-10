@@ -1,6 +1,7 @@
 'use client';
 
 
+import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, Suspense } from 'react';
 
@@ -21,8 +22,9 @@ function MetaPixelEvents() {
 export default function MetaPixel() {
     return (
         <>
-            <script
+            <Script
                 id="meta-pixel"
+                strategy="lazyOnload"
                 dangerouslySetInnerHTML={{
                     __html: `
             !function(f,b,e,v,n,t,s)
